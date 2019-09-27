@@ -1,14 +1,16 @@
 class Dice {
 
-    constructor (sides){
+     constructor (sides){
         this.sides = sides;
+        if(arguments.length == 2) {
+        this.probabilities = probabilities;
+        probabilities = [];
     }
- 
+}
 
-    roll() {
-      let value = Math.floor((Math.random() * this.sides) + 1); 
-        console.log(value);
-
+ roll() {
+    let value = Math.floor((Math.random() * this.sides) + 1); 
+    console.log(value);
     }
 }
 
@@ -17,6 +19,5 @@ let dice6 = new Dice(6);
 
 dice6.roll();
 dice20.roll();
-
 
 
