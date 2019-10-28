@@ -3,16 +3,18 @@ class Dice {
     constructor (sides, probabilities){
             this.numberOfSides = sides;
             this.sidesArr(sides);
-            this.setProbabilities(probabilities);
-            this.weighedSides = [];
-            this.rollRandomSide = [];
-  
+            if(arguments.length = 2){
+                this.probabilities = probabilities;
+            };
+            this.setProbabilities(this.probabilities);
+            
+        
 }
 
     setProbabilities(probabilities){
         this.probabilities = probabilities;
             for (let i = 0; i < probabilities.length; i++){
-                while (probabilities.length != this.allSideValues.length){
+                while (probabilities.length !== this.allSideValues.length){
                     throw new Error ("Probabilities are not equal to the sides!");
 
        }    if (probabilities[i] == 0) {
@@ -52,17 +54,19 @@ class Dice {
 
 
     roll(){
-        // this.rollRandomSide = [];
-    
+        this.weighedSides = [];
+
         for (let i = 0; i < this.probabilities.length; i++){
-                var multiplies = this.probabilities[i]
-            for (let j = 0; j < multiplies; j++){
-                this.weighedSides.push(this.allSideValues[i])
+                var multiplies = this.probabilities[i];
+            for (let j = 0; j < multiplies; j++){ 
+                this.weighedSides.push(this.allSideValues[i]);
             }
-            var value =  Math.floor((Math.random()* this.allSideValues[i]) + 1);
-            this.rollRandomSide.push(value)
-            
-               //return this.weighedSides;
+            var value = [];
+            value =  Math.floor((Math.random()* this.weighedSides.length) + 1);
+            this.randomIndexOfWeighedSides = [];            
+            this.randomIndexOfWeighedSides.push(value);
+
+                                             
         } 
     }   
 }
@@ -72,7 +76,7 @@ class Dice {
 
 
 
-    let dice6 = new Dice(6, [1,1,1,1,1,5]);
+    let dice6 = new Dice(6, [1,1,1,1,1,2]);
     dice6.roll();
     console.log(dice6);
   
