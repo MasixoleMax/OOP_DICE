@@ -76,4 +76,4 @@ class Dice {
 
     let dice6 = new Dice(6, [1,1,1,1,1,2]);
     dice6.roll();
-    // console.log(dice6);
+    console.log(dice6);
