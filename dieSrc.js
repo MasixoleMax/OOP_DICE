@@ -8,7 +8,6 @@ class Dice {
             };
             this.setProbabilities(this.probabilities);
             
-        
 }
 
     setProbabilities(probabilities){
@@ -24,7 +23,7 @@ class Dice {
                     throw new Error ("A probability can not be a negative value!");
         }
 
-             if (probabilities[i] > this.numberOfSides) {
+            if (probabilities[i] > this.numberOfSides) {
                     throw new Error ("No probability for this dice can be greater than " + this.numberOfSides + " !");
 }
        
@@ -52,8 +51,8 @@ class Dice {
             }          return this.allSideValues;
     }            
 
-
     roll(){
+
         this.weighedSides = [];
 
         for (let i = 0; i < this.probabilities.length; i++){
@@ -63,23 +62,18 @@ class Dice {
             }
             var value = [];
             value =  Math.floor((Math.random()* this.weighedSides.length) + 1);
-            this.randomIndexOfWeighedSides = [];            
+            this.randomIndexOfWeighedSides = [];           
             this.randomIndexOfWeighedSides.push(value);
-
+            return this.randomIndexOfWeighedSides;
                                              
         } 
     }   
 }
 
-
-            /************************************[END]*******************************************/
-
+            /*************************************[END]***************************************/
+            
 
 
     let dice6 = new Dice(6, [1,1,1,1,1,2]);
     dice6.roll();
-    console.log(dice6);
-  
-    
-
-
+    // console.log(dice6);
